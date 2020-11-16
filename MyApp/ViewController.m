@@ -6,38 +6,9 @@
 //
 
 #import "ViewController.h"
-
-@interface TestView : UIView
-
-@end
-
-@implementation TestView
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
-- (void)willMoveToSuperview:(nullable UIView *)newSuperview {
-    [super willMoveToSuperview:newSuperview];
-   
-}
-- (void)didMoveToSuperview {
-    [super didMoveToSuperview];
-}
-- (void)willMoveToWindow:(nullable UIWindow *)newWindow {
-    [super willMoveToWindow:newWindow];
-    
-}
-- (void)didMoveToWindow {
-    [super didMoveToWindow];
-}
+#import "GTNormalTableViewCell.h"
 
 
-@end
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -58,7 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:UIColor.brownColor];
-    // Do any additional setup after loading the view.
     self.a = 0;
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = self;
@@ -100,16 +70,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
-        self.a = self.a + 1;
-        NSLog(@"%d",self.a);
+        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+//        self.a = self.a + 1;
+//        NSLog(@"%d",self.a);
     }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@",@(indexPath.row)];
-    cell.detailTextLabel.text = @"副标题";
-    cell.imageView.image = [UIImage imageNamed:@"pic.jpg"];
+    [cell layoutTableViewCell];
+//    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@",@(indexPath.row)];
+//    cell.detailTextLabel.text = @"副标题";
+//    cell.imageView.image = [UIImage imageNamed:@"pic.jpg"];
     return cell;
 }
 
@@ -173,3 +143,38 @@
 //    [super viewDidDisappear:animated];
 //}  // Called after the view was dismissed, covered or otherwise hidden. Default does nothing
 //
+
+
+
+
+//@interface TestView : UIView
+//
+//@end
+//
+//@implementation TestView
+//
+//- (instancetype)init {
+//    self = [super init];
+//    if (self) {
+//
+//    }
+//    return self;
+//}
+//
+//- (void)willMoveToSuperview:(nullable UIView *)newSuperview {
+//    [super willMoveToSuperview:newSuperview];
+//
+//}
+//- (void)didMoveToSuperview {
+//    [super didMoveToSuperview];
+//}
+//- (void)willMoveToWindow:(nullable UIWindow *)newWindow {
+//    [super willMoveToWindow:newWindow];
+//
+//}
+//- (void)didMoveToWindow {
+//    [super didMoveToWindow];
+//}
+//
+//
+//@end

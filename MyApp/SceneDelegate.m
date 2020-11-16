@@ -8,6 +8,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import "GTVideoViewController.h"
+#import "GTRecommendViewController.h"
 @interface SceneDelegate ()<UITabBarControllerDelegate>
 
 @end
@@ -28,16 +29,13 @@
 
     
     GTVideoViewController *controller2 = [[GTVideoViewController alloc] init];
-    UIViewController *controller3 = [[UIViewController alloc] init];
+    GTRecommendViewController *controller3 = [[GTRecommendViewController alloc] init];
     UIViewController *controller4 = [[UIViewController alloc] init];
     VC.view.backgroundColor = [UIColor redColor];
-    controller3.view.backgroundColor = [UIColor grayColor];
     controller4.view.backgroundColor = [UIColor blueColor];
     
     
     VC.tabBarItem.title = @"新闻";
-    controller3.tabBarItem.title = @"推荐";
-    controller3.tabBarItem.image = [UIImage imageNamed:@"hot@2x.png"];
     controller4.tabBarItem.title = @"我的";
     controller4.tabBarItem.image = [UIImage imageNamed:@"mine@2x.png"];
     
@@ -51,7 +49,7 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    NSLog(@"did select");
+    
     
 }
 

@@ -28,9 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor = [UIColor blackColor];
-    // Do any additional setup after loading the view.
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];//流式布局
+    flowLayout.minimumLineSpacing = 10; //行间距（最小），实际宽度根据item的尺寸计算得到
+    flowLayout.minimumInteritemSpacing = 10; //列间距
+    flowLayout.itemSize = CGSizeMake((self.view.frame.size.width - 10) / 2, 300); //item的大小
+    
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -46,8 +49,16 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    cell.backgroundColor = [UIColor grayColor];
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.item %3 == 0) {
+        return CGSizeMake(self.view.frame.size.width, 100);
+    } else {
+        return CGSizeMake((self.view.frame.size.width - 10) / 2, 300);
+    }
 }
 
 /*

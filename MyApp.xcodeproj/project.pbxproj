@@ -13,6 +13,8 @@
 		D36EC5B3255D345B00333B8C /* video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36EC5B1255D345B00333B8C /* video@2x.png */; };
 		D36EC5B8255D350700333B8C /* hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36EC5B7255D350700333B8C /* hot@2x.png */; };
 		D36EC5BD255D356000333B8C /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D36EC5BC255D356000333B8C /* pic.jpg */; };
+		D3898BEE25625B95006931E8 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3898BED25625B95006931E8 /* GTRecommendViewController.m */; };
+		D3898BF22562C5D4006931E8 /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3898BF12562C5D4006931E8 /* GTNormalTableViewCell.m */; };
 		D3B4734C254ED7AA008B0B47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4734B254ED7AA008B0B47 /* AppDelegate.m */; };
 		D3B4734F254ED7AA008B0B47 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4734E254ED7AA008B0B47 /* SceneDelegate.m */; };
 		D3B47352254ED7AA008B0B47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B47351254ED7AA008B0B47 /* ViewController.m */; };
@@ -29,6 +31,10 @@
 		D36EC5B1255D345B00333B8C /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
 		D36EC5B7255D350700333B8C /* hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot@2x.png"; sourceTree = "<group>"; };
 		D36EC5BC255D356000333B8C /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
+		D3898BEC25625B95006931E8 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
+		D3898BED25625B95006931E8 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
+		D3898BF02562C5D4006931E8 /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
+		D3898BF12562C5D4006931E8 /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		D3B47347254ED7AA008B0B47 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B4734A254ED7AA008B0B47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3B4734B254ED7AA008B0B47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +95,10 @@
 				D36EC5AD255D344100333B8C /* mine@2x.png */,
 				D3018179255824F900277E0A /* GTVideoViewController.h */,
 				D301817A255824F900277E0A /* GTVideoViewController.m */,
+				D3898BEC25625B95006931E8 /* GTRecommendViewController.h */,
+				D3898BED25625B95006931E8 /* GTRecommendViewController.m */,
+				D3898BF02562C5D4006931E8 /* GTNormalTableViewCell.h */,
+				D3898BF12562C5D4006931E8 /* GTNormalTableViewCell.m */,
 			);
 			path = MyApp;
 			sourceTree = "<group>";
@@ -166,8 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3898BF22562C5D4006931E8 /* GTNormalTableViewCell.m in Sources */,
 				D3B47352254ED7AA008B0B47 /* ViewController.m in Sources */,
 				D301817B255824F900277E0A /* GTVideoViewController.m in Sources */,
+				D3898BEE25625B95006931E8 /* GTRecommendViewController.m in Sources */,
 				D3B4734C254ED7AA008B0B47 /* AppDelegate.m in Sources */,
 				D3B4735D254ED7AD008B0B47 /* main.m in Sources */,
 				D3B4734F254ED7AA008B0B47 /* SceneDelegate.m in Sources */,
