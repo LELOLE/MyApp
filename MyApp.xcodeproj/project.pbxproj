@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D301817B255824F900277E0A /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D301817A255824F900277E0A /* GTVideoViewController.m */; };
+		D36C383425650C0F00D4526D /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36C383325650C0F00D4526D /* GTDetailViewController.m */; };
 		D36EC5AE255D344100333B8C /* mine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36EC5AD255D344100333B8C /* mine@2x.png */; };
 		D36EC5B2255D345B00333B8C /* news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36EC5B0255D345B00333B8C /* news@2x.png */; };
 		D36EC5B3255D345B00333B8C /* video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D36EC5B1255D345B00333B8C /* video@2x.png */; };
@@ -15,6 +16,7 @@
 		D36EC5BD255D356000333B8C /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D36EC5BC255D356000333B8C /* pic.jpg */; };
 		D3898BEE25625B95006931E8 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3898BED25625B95006931E8 /* GTRecommendViewController.m */; };
 		D3898BF22562C5D4006931E8 /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3898BF12562C5D4006931E8 /* GTNormalTableViewCell.m */; };
+		D3898BF525635303006931E8 /* lzj.png in Resources */ = {isa = PBXBuildFile; fileRef = D3898BF425635303006931E8 /* lzj.png */; };
 		D3B4734C254ED7AA008B0B47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4734B254ED7AA008B0B47 /* AppDelegate.m */; };
 		D3B4734F254ED7AA008B0B47 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4734E254ED7AA008B0B47 /* SceneDelegate.m */; };
 		D3B47352254ED7AA008B0B47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B47351254ED7AA008B0B47 /* ViewController.m */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		D3018179255824F900277E0A /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
 		D301817A255824F900277E0A /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
+		D36C383225650C0F00D4526D /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
+		D36C383325650C0F00D4526D /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		D36EC5AD255D344100333B8C /* mine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine@2x.png"; sourceTree = "<group>"; };
 		D36EC5B0255D345B00333B8C /* news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news@2x.png"; sourceTree = "<group>"; };
 		D36EC5B1255D345B00333B8C /* video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@2x.png"; sourceTree = "<group>"; };
@@ -35,6 +39,7 @@
 		D3898BED25625B95006931E8 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
 		D3898BF02562C5D4006931E8 /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		D3898BF12562C5D4006931E8 /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
+		D3898BF425635303006931E8 /* lzj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lzj.png; sourceTree = "<group>"; };
 		D3B47347254ED7AA008B0B47 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B4734A254ED7AA008B0B47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D3B4734B254ED7AA008B0B47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 				D3B4735C254ED7AD008B0B47 /* main.m */,
 				D36EC5B0255D345B00333B8C /* news@2x.png */,
 				D36EC5BC255D356000333B8C /* pic.jpg */,
+				D3898BF425635303006931E8 /* lzj.png */,
 				D36EC5B1255D345B00333B8C /* video@2x.png */,
 				D36EC5B7255D350700333B8C /* hot@2x.png */,
 				D36EC5AD255D344100333B8C /* mine@2x.png */,
@@ -99,6 +105,8 @@
 				D3898BED25625B95006931E8 /* GTRecommendViewController.m */,
 				D3898BF02562C5D4006931E8 /* GTNormalTableViewCell.h */,
 				D3898BF12562C5D4006931E8 /* GTNormalTableViewCell.m */,
+				D36C383225650C0F00D4526D /* GTDetailViewController.h */,
+				D36C383325650C0F00D4526D /* GTDetailViewController.m */,
 			);
 			path = MyApp;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 				D3B4735A254ED7AD008B0B47 /* LaunchScreen.storyboard in Resources */,
 				D3B47357254ED7AD008B0B47 /* Assets.xcassets in Resources */,
 				D36EC5B8255D350700333B8C /* hot@2x.png in Resources */,
+				D3898BF525635303006931E8 /* lzj.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36C383425650C0F00D4526D /* GTDetailViewController.m in Sources */,
 				D3898BF22562C5D4006931E8 /* GTNormalTableViewCell.m in Sources */,
 				D3B47352254ED7AA008B0B47 /* ViewController.m in Sources */,
 				D301817B255824F900277E0A /* GTVideoViewController.m in Sources */,

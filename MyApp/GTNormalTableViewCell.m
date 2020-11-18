@@ -13,13 +13,15 @@
 @property(nonatomic, strong, readwrite) UILabel *sourceLabel;
 @property(nonatomic, strong, readwrite) UILabel *commentLabel;
 @property(nonatomic, strong, readwrite) UILabel *timeLabel;
+@property(nonatomic, strong, readwrite) UIImageView *rightImageView;
+@property(nonatomic, strong, readwrite) UIButton *deleteButton;
 @end
 @implementation GTNormalTableViewCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self.contentView addSubview:({
-            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 300, 50)];
+            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, self.frame.size.width * 0.6, 50)];
             self.titleLabel.backgroundColor = [UIColor brownColor];
             self.titleLabel.font = [UIFont systemFontOfSize:16];
             self.titleLabel.textColor = [UIColor blackColor];
@@ -46,6 +48,23 @@
             self.timeLabel.textColor = [UIColor grayColor];
             self.timeLabel;
         })];
+        [self.contentView addSubview:({
+            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width * 3/4, 15, 60, 60)];
+            self.rightImageView.backgroundColor = [UIColor yellowColor];
+            
+            self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
+            self.rightImageView;
+        })];
+        [self.contentView addSubview:({
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width * 3/5, self.frame.size.height, 44, 44)];
+            self.deleteButton.backgroundColor = [UIColor blueColor];
+            [self.deleteButton setTitle:@"x" forState:UIControlStateNormal];
+            [self.deleteButton setTitle:@"v" forState:UIControlStateHighlighted];
+
+            [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
+            self.deleteButton.contentMode = UIViewContentModeScaleAspectFit;
+            self.deleteButton;
+        })];
     }
     return self;
 }
@@ -60,6 +79,13 @@
     self.timeLabel.text = @"dodie";
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
+    
+    
+    self.rightImageView.image = [UIImage imageNamed:@"lzj.png"];
+}
+
+- (void)deleteButtonClick {
+    NSLog(@"hehe");
 }
 
 
