@@ -30,7 +30,7 @@
     })];
     
     [self.view addSubview:({
-        self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 20)];
+        self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(-5, 92, self.view.frame.size.width + 10, 10)];
         self.progressView;
     })];
     
@@ -47,12 +47,17 @@
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+    
+    self.navigationItem.title = self.webView.title;
     NSLog(@"didFinishNavigation");
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     self.progressView.progress = self.webView.estimatedProgress;
-    NSLog(@"");
+    if (self.progressView.progress == 1) {
+        [self.progressView removeFromSuperview];
+    }
+    NSLog(@"1111");
 }
 
 

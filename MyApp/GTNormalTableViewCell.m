@@ -49,14 +49,16 @@
             self.timeLabel;
         })];
         [self.contentView addSubview:({
-            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width * 3/4, 15, 60, 60)];
+            self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 70, 15, 60, 60)];
+            NSLog(@"cell:%f",self.frame.size.width);
+            NSLog(@"content:%f",self.frame.size.width);
             self.rightImageView.backgroundColor = [UIColor yellowColor];
             
             self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
             self.rightImageView;
         })];
         [self.contentView addSubview:({
-            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width * 3/5, self.frame.size.height, 44, 44)];
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 44, self.frame.size.height, 44, 44)];
             self.deleteButton.backgroundColor = [UIColor blueColor];
             [self.deleteButton setTitle:@"x" forState:UIControlStateNormal];
             [self.deleteButton setTitle:@"v" forState:UIControlStateHighlighted];
@@ -69,9 +71,18 @@
     return self;
 }
 
+//- (void)setFrame:(CGRect)frame
+//{
+//    frame.size.width = 375;
+//    [super setFrame:frame];
+//
+//}
+
+
+
 - (void) layoutTableViewCell {
-    self.titleLabel.text = @"snapes";
-    self.sourceLabel.text = @"annanlin";
+    self.titleLabel.text = @"Jessi";
+    self.sourceLabel.text = @"marry";
     [self.sourceLabel sizeToFit];
     self.commentLabel.text = @"miley";
     [self.commentLabel sizeToFit];
@@ -85,7 +96,9 @@
 }
 
 - (void)deleteButtonClick {
-    NSLog(@"hehe");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]) {
+        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+    }
 }
 
 

@@ -8,12 +8,15 @@
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
+#import "GTDeleteCellView.h"
 
 
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource, UITableViewDelegate, GTNormalTableViewCellDelegate>
 
-@property (nonatomic) int a;
+@property(nonatomic, strong, readwrite) UITableView *tableView;
+@property(nonatomic, strong, readwrite) NSMutableArray *dataArray;//真实当中不用 mutable
+
 @end
 
 @implementation ViewController
@@ -21,6 +24,10 @@
 - (instancetype) init {
     self = [super init];
     if (self) {
+        _dataArray = @[].mutableCopy;
+        for (int i = 0; i < 20; i++) {
+            [_dataArray addObject:@(i)];
+        }
         self.tabBarItem.title = @"新闻";
         self.tabBarItem.image = [UIImage imageNamed: @"news@2x.png"];
     }
@@ -30,7 +37,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:UIColor.brownColor];
-    self.a = 0;
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     tableView.dataSource = self;
     tableView.delegate = self;
@@ -62,20 +68,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GTDetailViewController *viewController = [[GTDetailViewController alloc] init];
-    viewController.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
+//    viewController.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 #pragma mark data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     if (!cell) {
-        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
-//        self.a = self.a + 1;
-//        NSLog(@"%d",self.a);
+        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
+        cell.delegate = self;
     }
     [cell layoutTableViewCell];
 //    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@",@(indexPath.row)];
@@ -97,7 +102,6 @@
 }
 
 - (void)action1 {
-    NSLog(@"action 1");
 }
 
 - (void)testSubviewManagement {
@@ -113,6 +117,20 @@
     
     //addSubview 方法管理子view使用的是栈结构
 }
+
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton {
+    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+    
+    __weak typeof(self) wself = self;
+    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
+        __strong typeof(self)strongSelf = wself;
+        [strongSelf.dataArray removeLastObject];
+        [strongSelf.tableView deleteRowsAtIndexPaths:@[[strongSelf.tableView indexPathForCell:tableViewCell]] withRowAnimation:100];
+        
+    }];
+}
+
 
 @end
 
@@ -146,7 +164,7 @@
 //
 
 
-
+CALayer
 
 //@interface TestView : UIView
 //
