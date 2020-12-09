@@ -50,8 +50,6 @@
         })];
         [self.contentView addSubview:({
             self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 70, 15, 60, 60)];
-            NSLog(@"cell:%f",self.frame.size.width);
-            NSLog(@"content:%f",self.frame.size.width);
             self.rightImageView.backgroundColor = [UIColor yellowColor];
             
             self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;

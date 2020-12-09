@@ -59,6 +59,7 @@
 
 - (void)dismissDeleteView {
     [self removeFromSuperview];
+    
 }
 
 - (void)_clickButton {
